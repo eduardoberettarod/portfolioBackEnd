@@ -2,18 +2,25 @@
 import './App.css'
 import './style/global.css'
 
-// Paginas
+// Páginas
 import Index from './pages/Home/Index'
+import Menu from './pages/Menu/Menu'
 
 // Components
 import Navbar from './components/Navbar/Navbar'
 
-function App() {
+import { Routes, Route } from 'react-router-dom'
 
+function App() {
   return (
     <>
       <Navbar />
-      <Index />
+      <Menu />
+
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/index" element={<Index />} />
+      </Routes>
     </>
   )
 }

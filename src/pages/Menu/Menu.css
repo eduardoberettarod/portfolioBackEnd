@@ -1,0 +1,28 @@
+#menu-page {
+    position: absolute;
+    color: #FAFAFA;
+    height: 100vh;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    opacity: 0;
+}
+
+.menu-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-container a {
+  width: 200px;
+  text-decoration: none;
+  color: #FAFAFA;
+  font-size: 70px;
+  font-family: 'Neue Montreal';
+  text-align: left;
+}

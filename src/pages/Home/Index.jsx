@@ -15,16 +15,9 @@ const Index = () => {
                     <p>Desenvolvedor Full Stack</p>
                 </div>
                 <div className='container-buttons'>
-
                     <div>
                         <button>
                             <i className="bi bi-github fs-4"></i>
-                        </button>
-                    </div>
-
-                    <div>
-                        <button>
-                            <i class="bi bi-file-earmark-person-fill fs-4"></i>
                         </button>
                     </div>
                 </div>

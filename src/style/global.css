@@ -1,0 +1,21 @@
+:root {
+    --mg-inline: 2.5rem;
+    --mg-block: 2.5rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+section {
+    width: 100%;
+    background-color: #252525;
+}
+
+
+@font-face {
+    font-family: Neue Montreal;
+    src: url(../public/font/NeueMontreal-Light.otf) format("opentype");
+}

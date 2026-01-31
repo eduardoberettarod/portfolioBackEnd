@@ -1,0 +1,37 @@
+.container-navbar-image img{
+    width: 50px;
+    height: auto;
+    margin-left: 2.6rem;
+}
+
+.navbar-system{
+    margin-top: 2.6rem;
+}
+
+.container-navbar-button{
+    margin-right: 2.6rem;
+}
+
+.button-navbar{
+    background: none;
+    color: #FAFAFA;
+    border: none;
+    font-size: 18px;
+    font-family: 'Neue Montreal';
+    letter-spacing: 1px;
+}
+
+@media (max-width: 767.98px) {
+    .container-navbar-image img{
+        width: 40px;
+        margin-left: 2rem;
+    }
+
+    .container-navbar-button{
+        margin-right: 2rem;
+    }
+
+    .button-navbar{
+        font-size: 14px;
+    }
+}

@@ -17,5 +17,5 @@ section {
 
 @font-face {
     font-family: Neue Montreal;
-    src: url(./public/font/NeueMontreal-Light.otf) format("opentype");
+    src: url(/font/NeueMontreal-Light.otf) format("opentype");
 }

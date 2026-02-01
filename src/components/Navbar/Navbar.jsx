@@ -58,7 +58,7 @@ const Navbar = ({ menuAberto, setMenuAberto }) => {
           className="button-navbar"
           onClick={fnMostrarMenu}
         >
-          {menuAberto ? <i className="bi bi-x-lg" /> : 'MENU'}
+          {menuAberto ? <i className="bi bi-x-lg fs-4" /> : 'MENU'}
 
         </button>
       </div>

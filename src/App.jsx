@@ -4,9 +4,10 @@ import './style/global.css'
 
 // Páginas
 import Index from './pages/Home/Index'
-import Menu from './pages/Menu/Menu'
+import Project from './pages/Projects/Project'
 
 // Components
+import Menu from './pages/Menu/Menu'
 import Navbar from './components/Navbar/Navbar'
 
 import { Routes, Route } from 'react-router-dom'
@@ -20,11 +21,16 @@ function App() {
         menuAberto={menuAberto}
         setMenuAberto={setMenuAberto}
       />
-      <Menu menuAberto={menuAberto} />
+      <Menu
+        menuAberto={menuAberto}
+        setMenuAberto={setMenuAberto}
+      />
+
 
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/index" element={<Index />} />
+        <Route path="/projetos" element={<Project />} />
       </Routes>
     </>
   )

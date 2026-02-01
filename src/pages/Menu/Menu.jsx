@@ -3,9 +3,14 @@ import { NavLink } from 'react-router-dom'
 import gsap from 'gsap'
 import './Menu.css'
 
-const Menu = ({ menuAberto }) => {
+const Menu = ({ menuAberto, setMenuAberto }) => {
     const menuPage = useRef(null)
     const menuContainer = useRef(null)
+
+    function fecharMenu() {
+        setMenuAberto(false)
+    }
+
 
     useEffect(() => {
         if (menuAberto) {
@@ -47,13 +52,26 @@ const Menu = ({ menuAberto }) => {
     return (
         <section id="menu-page" ref={menuPage}>
             <div className="menu-container" ref={menuContainer}>
-                <NavLink to="/index">Início</NavLink>
-                <NavLink>Projetos</NavLink>
-                <NavLink>Sobre</NavLink>
-                <NavLink className="menu-link contato-link d-flex align-items-center justify-content-between">
+                <NavLink to="/index" onClick={fecharMenu}>
+                    Início
+                </NavLink>
+
+                <NavLink to="/projetos" onClick={fecharMenu}>
+                    Projetos
+                </NavLink>
+
+                <NavLink to="/sobre" onClick={fecharMenu}>
+                    Sobre
+                </NavLink>
+
+                <NavLink
+                    className="menu-link contato-link d-flex align-items-center justify-content-between"
+                    onClick={fecharMenu}
+                >
                     Contato
                     <i className="bi bi-arrow-up-right"></i>
                 </NavLink>
+
             </div>
         </section>
     )

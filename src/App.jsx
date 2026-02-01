@@ -10,12 +10,17 @@ import Menu from './pages/Menu/Menu'
 import Navbar from './components/Navbar/Navbar'
 
 import { Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
 
 function App() {
+  const [menuAberto, setMenuAberto] = useState(false)
   return (
     <>
-      <Navbar />
-      <Menu />
+      <Navbar
+        menuAberto={menuAberto}
+        setMenuAberto={setMenuAberto}
+      />
+      <Menu menuAberto={menuAberto} />
 
       <Routes>
         <Route path="/" element={<Index />} />

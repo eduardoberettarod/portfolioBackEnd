@@ -1,4 +1,11 @@
 #project-page{
-    height: 100vh;
+    position: relative;
     color: #FAFAFA;
+    padding-bottom: 10vh;
+}
+
+.container-text {
+    width: 40%;
+    position: relative;
+    top: 50%;
 }

@@ -2,20 +2,30 @@ import React from 'react'
 import './Project.css'
 
 // components
-import CardGlass from '../../components/CardGlass/CardGlass'
 import CardBlack from '../../components/Card/Card'
 
 
 const Project = () => {
   return (
     <>
-    <section id='project-page'>
+      <section id='project-page'>
+        <div className='d-flex justify-content-between'>
 
-        <CardBlack />
-    
-    </section>
+          <div className='container-text'>
+            <h1>Projetos</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi eos accusantium iusto aliquam voluptatem minima ullam omnis delectus debitis totam quis voluptates labore harum et numquam dicta, maiores fugit ex.</p>
+          </div>
+
+          <div className=''>
+            <CardBlack />
+          </div>
+
+        </div>
+
+
+      </section>
     </>
-      
+
   )
 }
 

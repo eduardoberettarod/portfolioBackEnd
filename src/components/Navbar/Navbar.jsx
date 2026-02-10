@@ -5,6 +5,7 @@ import gsap from 'gsap'
 const Navbar = ({ menuAberto, setMenuAberto }) => {
   const buttonRef = useRef(null)
   const navbarLogo = useRef(null)
+  const navbarLogoBlack = useRef(null)
 
   function fnMostrarMenu() {
     setMenuAberto(prev => !prev)
@@ -14,6 +15,12 @@ const Navbar = ({ menuAberto, setMenuAberto }) => {
 
     gsap.from(navbarLogo.current, {
       x: -20,
+      opacity: 0,
+      duration: 1,
+      ease: 'power2.out'
+    })
+
+    gsap.from(navbarLogoBlack.current, {
       opacity: 0,
       duration: 1,
       ease: 'power2.out'
@@ -49,7 +56,8 @@ const Navbar = ({ menuAberto, setMenuAberto }) => {
   return (
     <div className="d-flex justify-content-between fixed-top align-items-center navbar-system">
       <div className="container-navbar-image">
-        <img src="/image/logo-white.svg" alt="Logo" ref={navbarLogo} />
+        {menuAberto ? <img src="/image/logo-black.svg" alt="Logo" ref={navbarLogoBlack} /> : <img src="/image/logo-white.svg" alt="Logo" ref={navbarLogo} /> }
+        
       </div>
 
       <div className="container-navbar-button">
@@ -58,7 +66,7 @@ const Navbar = ({ menuAberto, setMenuAberto }) => {
           className="button-navbar"
           onClick={fnMostrarMenu}
         >
-          {menuAberto ? <i className="bi bi-x-lg fs-4" /> : 'MENU'}
+          {menuAberto ? <i className="bi bi-x-lg fs-4 close-button" /> : 'MENU'}
 
         </button>
       </div>

@@ -17,7 +17,7 @@ const Menu = ({ menuAberto, setMenuAberto }) => {
             gsap.to(menuPage.current, {
                 opacity: 1,
                 duration: 0.5,
-                ease: 'power2.out',
+                ease: 'power2.in',
                 pointerEvents: 'auto'
             })
         } else {

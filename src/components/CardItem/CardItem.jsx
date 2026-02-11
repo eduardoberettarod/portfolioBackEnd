@@ -16,15 +16,15 @@ const CardItem = ({ projeto }) => {
 
                 <div>
                     <div>
-                        <h1>{projeto.nomeProjeto}</h1>
+                        <h1 className='title-card'>{projeto.nomeProjeto}</h1>
                     </div>
-                    <p>
+                    {/* <p>
                         {projeto.descricaoProjeto}
-                    </p>
+                    </p> */}
                 </div>
 
                 <div>
-                    <button className='w-100'>
+                    <button className='btn-card d-flex align-items-center justify-content-center gap-2'>
                         VER PROJETO <i className='bi bi-display fs-6'></i>
                     </button>
                 </div>

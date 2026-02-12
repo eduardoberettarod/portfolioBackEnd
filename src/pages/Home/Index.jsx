@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react'
-import { useLocation } from 'react-router-dom' // 🔥 1. importar isso
+import { useLocation } from 'react-router-dom'
 import gsap from 'gsap'
 import './Index.css'
 
@@ -10,7 +10,7 @@ const Index = () => {
   const containerHome = useRef(null)
   const containerButton = useRef(null)
 
-  const location = useLocation() // 🔥 2. pegar a rota atual
+  const location = useLocation()
 
   useEffect(() => {
     // 🔹 sempre que entrar no /index, isso roda

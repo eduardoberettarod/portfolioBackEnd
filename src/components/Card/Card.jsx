@@ -1,6 +1,10 @@
-// Card.jsx
-import React from 'react'
+import { useEffect, useRef } from "react"
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useLocation } from 'react-router-dom'
 import CardItem from '../CardItem/CardItem'
+
+gsap.registerPlugin(ScrollTrigger);
 
 const projetos = [
   {
@@ -11,8 +15,8 @@ const projetos = [
     ano: "2025 — 2026",
     github: "https://github.com/eduardoberettarod/PI-prontuario-eletronico",
     tags: ["React", "CSS", "JS"],
-    img: "/image/cyberlab/cyberlab.png",
-    imgLogo: "/image/cyberlab/cyberlabLogo.svg"
+    img: "/image/prontuario/prontuario-eletronico.png",
+    imgLogo: "/image/prontuario/prontuario-eletronicoLogo.svg"
   },
 
   {
@@ -26,13 +30,76 @@ const projetos = [
     img: "/image/portfolio/portfolio.png",
     imgLogo: "/image/portfolio/portfolioLogo.svg"
   },
+
+  {
+    id: 3,
+    nomeProjeto: "Pokédex Simples",
+    descricaoProjeto: "Uma landing page de portfolio pessoal criada para apresentar projetos e habilidades. Esta versão inicial demonstra conhecimentos em desenvolvimento front-end com foco em design responsivo e experiência do usuário.",
+    link: "https://aula-react-pokemon.vercel.app/",
+    ano: "2025",
+    github: "https://github.com/eduardoberettarod/aula-react-pokemon",
+    tags: ["React", "CSS", "JS"],
+    img: "/image/pokemon/pokemon.png",
+    imgLogo: "/image/pokemon/pokemonLogo.png"
+  },
+
+  {
+    id: 4,
+    nomeProjeto: "CyberLab",
+    descricaoProjeto: "Uma landing page de portfolio pessoal criada para apresentar projetos e habilidades. Esta versão inicial demonstra conhecimentos em desenvolvimento front-end com foco em design responsivo e experiência do usuário.",
+    link: "https://aula-react-pokemon.vercel.app/",
+    ano: "2025",
+    github: "https://github.com/eduardoberettarod/aula-react-pokemon",
+    tags: ["React", "CSS", "JS"],
+    img: "/image/cyberlab/cyberlab.png",
+    imgLogo: "/image/cyberlab/cyberlabLogo.svg"
+  }
+
 ]
 
+
 const Card = () => {
+
+  const containerRef = useRef(null)
+  const location = useLocation()
+
+  useEffect(() => {
+
+    const ctx = gsap.context(() => {
+
+      gsap.utils.toArray(".card-project").forEach((card) => {
+
+        gsap.from(card, {
+          y: 24,
+          opacity: 0,
+          duration: 0.6,
+          ease: "sine.out",
+
+          scrollTrigger: {
+            trigger: card,
+            start: "top 92%",
+            end: "bottom 30%",
+            toggleActions: "play reverse play reverse",
+          }
+        });
+
+      });
+
+    }, containerRef);
+
+    return () => ctx.revert();
+
+  }, [location.pathname]);
+
   return (
-    <div className="cards-container">
+    <div className="row g-4" ref={containerRef}>
       {projetos.map((p) => (
-        <CardItem key={p.id} projeto={p} />
+        <div
+          key={p.id}
+          className="col-12 col-md-6 col-lg-4 cards-project"
+        >
+          <CardItem projeto={p} />
+        </div>
       ))}
     </div>
   )

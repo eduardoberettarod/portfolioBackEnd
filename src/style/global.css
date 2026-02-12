@@ -11,9 +11,11 @@
 
 section {
     width: 100%;
-    background-color: #252525;
 }
 
+body {
+    background-color: #252525;
+}
 
 @font-face {
     font-family: Neue Montreal;

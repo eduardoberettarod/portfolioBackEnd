@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { NavLink } from 'react-router-dom'
 import './Navbar.css'
 import gsap from 'gsap'
 
@@ -55,10 +56,10 @@ const Navbar = ({ menuAberto, setMenuAberto }) => {
 
   return (
     <div className="d-flex justify-content-between fixed-top align-items-center navbar-system">
-      <div className="container-navbar-image">
+      <NavLink to={'/index'} className="container-navbar-image">
         {menuAberto ? <img src="/image/logo-black.svg" alt="Logo" ref={navbarLogoBlack} /> : <img src="/image/logo-white.svg" alt="Logo" ref={navbarLogo} /> }
         
-      </div>
+      </NavLink>
 
       <div className="container-navbar-button">
         <button

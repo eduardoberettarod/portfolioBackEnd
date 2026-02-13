@@ -77,7 +77,7 @@ const Card = () => {
 
           scrollTrigger: {
             trigger: card,
-            start: "top 92%",
+            start: "top 82%",
             end: "bottom 30%",
             toggleActions: "play reverse play reverse",
           }

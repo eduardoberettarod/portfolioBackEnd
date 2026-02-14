@@ -41,3 +41,70 @@
     border-bottom-color: rgba(250, 250, 250, 0.2);
     border-top-color: rgba(250, 250, 250, 0.2) ;
 }
+
+.modal-body img{
+    width: 100%;
+    max-height: 600px;
+}
+
+.modal-footer button{
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+}
+
+.btn-live {
+    background-color: rgba(80, 140, 255, 0.12);
+    color: #6ea8ff;
+}
+
+.btn-github {
+    background-color: #ffffff10;
+    color: #e8e8e8;
+}
+
+.modal-footer button {
+    transition: 0.25s;
+}
+
+.btn-live:hover {
+    background-color: rgba(80, 140, 255, 0.2);
+}
+
+.btn-github:hover {
+    background-color: #ffffff2a;
+}
+
+.tags-project {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.tags-project li {
+    padding: 6px 12px;
+    border-radius: 6px;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+
+    color: #d9d9d9;
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: 0.25s;
+}
+
+.tags-project li:hover {
+    background-color: rgba(255,255,255,0.10);
+}

@@ -1,4 +1,4 @@
-import { useEffect ,useRef} from 'react'
+import { useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
 import gsap from 'gsap'
 import './Project.css'
@@ -12,7 +12,7 @@ const Project = () => {
   const containerRef = useRef(null)
   const location = useLocation()
 
-   useEffect(() => {
+  useEffect(() => {
 
     gsap.fromTo(
       containerRef.current,
@@ -30,6 +30,13 @@ const Project = () => {
   return (
     <>
       <section id='project-page'>
+
+        <div class="scroll-indicator text-white">
+          <div class="mouse">
+            <div class="wheel"></div>
+          </div>
+        </div>
+
         <div className="container px-4 px-lg-5 py-5">
           <div className='mb-4 project-title' ref={containerRef}>
             <h1>Projetos</h1>

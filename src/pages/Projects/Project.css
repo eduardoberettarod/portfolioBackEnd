@@ -25,8 +25,9 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    animation: bounce 2s infinite;
-    margin-bottom: 2.5rem;
+    animation: bounce 2.5s infinite;
+    margin-bottom: 2rem;
+    z-index: 2;
 }
 
 .mouse {
@@ -46,6 +47,36 @@
     border-radius: 2px;
 }
 
+/* Caixa da tooltip */
+.custom-tooltip .tooltip-inner {
+    background-color: rgba(15, 15, 15, 0.95);
+    color: #FAFAFA;
+
+    font-family: 'Neue Montreal';
+    font-size: 0.8rem;
+    letter-spacing: 0.4px;
+    margin-bottom: 0.85rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    opacity: 0.95;
+}
+
+.custom-tooltip .tooltip-inner {
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip-arrow {
+    margin-bottom: 0.85rem;
+}
+
+.custom-tooltip .tooltip-arrow::before {
+    margin-bottom: 0.85rem;
+    border-top-color: rgba(15, 15, 15, 0.95) !important;
+}
 
 /* animação tipo animate-bounce */
 @keyframes bounce {
@@ -72,6 +103,32 @@
 
     .project-title p {
         font-size: 0.85rem;
+    }
+
+    .mouse {
+        width: 16px;
+        height: 28px;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        border-radius: 14px;
+        padding-top: 5px;
+    }
+
+    .wheel {
+        width: 2px;
+        height: 5px;
+        border-radius: 2px;
+    }
+
+
+    .scroll-indicator i {
+        font-size: 0.8rem;
+        line-height: 1;
+        margin-top: 2px;
+        display: block;
+    }
+
+    .scroll-indicator {
+        gap: 4px;
     }
 
 }

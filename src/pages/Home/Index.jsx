@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect as useLayoutEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import gsap from 'gsap'
 import './Index.css'
@@ -12,7 +12,7 @@ const Index = () => {
 
   const location = useLocation()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // 🔹 sempre que entrar no /index, isso roda
 
     gsap.fromTo(
@@ -50,9 +50,9 @@ const Index = () => {
 
       <div className="container-buttons" ref={containerButton}>
         <div>
-          <button>
+          <a href='https://github.com/eduardoberettarod' target='_blank' className='text-decoration-none text-white'>
             <i className="bi bi-github fs-4"></i>
-          </button>
+          </a>
         </div>
       </div>
     </section>

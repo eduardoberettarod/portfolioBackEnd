@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect as useLayoutEffect, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import './Navbar.css'
 import gsap from 'gsap'
@@ -12,7 +12,7 @@ const Navbar = ({ menuAberto, setMenuAberto }) => {
     setMenuAberto(prev => !prev)
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
 
     gsap.from(navbarLogo.current, {
       x: -20,
@@ -29,7 +29,7 @@ const Navbar = ({ menuAberto, setMenuAberto }) => {
 
   })
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!buttonRef.current) return
 
     // anima saída

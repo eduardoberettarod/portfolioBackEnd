@@ -44,7 +44,7 @@
 
 .modal-body img{
     width: 100%;
-    max-height: 600px;
+    max-height: 650px;
 }
 
 .modal-footer button{
@@ -108,3 +108,18 @@
 .tags-project li:hover {
     background-color: rgba(255,255,255,0.10);
 }
+
+.swiper {
+  
+  /* Altera especificamente a cor das setas de navegação */
+  --swiper-navigation-color: #000000;
+  
+  /* Altera especificamente a cor da paginação */
+  --swiper-pagination-color: #000000;
+  
+  /* Altera a cor do bullet inativo */
+  --swiper-pagination-bullet-inactive-color: #ccc;
+  --swiper-pagination-bullet-inactive-opacity: 0.3;
+  --swiper-navigation-size: 20px; /* Altere para o tamanho desejado */
+}
+

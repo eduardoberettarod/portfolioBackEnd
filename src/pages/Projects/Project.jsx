@@ -1,18 +1,26 @@
-import { useEffect, useRef } from 'react'
+import { useEffect as useLayoutEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
 import gsap from 'gsap'
 import './Project.css'
+import * as bootstrap from 'bootstrap';
 
 // components
 import CardBlack from '../../components/Card/Card'
 
-
 const Project = () => {
+
+  const tooltipRef = useRef(null)
+
+  useLayoutEffect(() => {
+    const tooltip = new bootstrap.Tooltip(tooltipRef.current)
+
+    return () => tooltip.dispose()
+  }, [])
 
   const containerRef = useRef(null)
   const location = useLocation()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
 
     gsap.fromTo(
       containerRef.current,
@@ -31,10 +39,16 @@ const Project = () => {
     <>
       <section id='project-page'>
 
-        <div class="scroll-indicator text-white">
-          <div class="mouse">
-            <div class="wheel"></div>
+        <div className="scroll-indicator text-white align-items-center d-flex justify-content-center flex-column"
+          data-bs-toggle="tooltip"
+          ref={tooltipRef}
+          data-bs-title="Role para explorar"
+          data-bs-custom-class="custom-tooltip"
+          data-bs-placement="top">
+          <div className="mouse">
+            <div className="wheel"></div>
           </div>
+          <i className="bi bi-caret-down opacity-75"></i>
         </div>
 
         <div className="container px-4 px-lg-5 py-5">

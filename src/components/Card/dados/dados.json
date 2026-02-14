@@ -11,7 +11,10 @@
             "CSS",
             "JS"
         ],
-        "img": "/image/prontuario/prontuario-eletronico.png",
+        "img": [
+            "/image/prontuario/prontuario-eletronico.png",
+            "/image/prontuario/prontuario-eletronico.png"
+        ],
         "imgLogo": "/image/prontuario/prontuario-eletronicoLogo.svg"
     },
     {
@@ -26,7 +29,9 @@
             "CSS",
             "JS"
         ],
-        "img": "/image/portfolio/portfolio.png",
+        "img": [
+            "/image/portfolio/portfolio.png"
+        ],
         "imgLogo": "/image/portfolio/portfolioLogo.svg"
     },
     {
@@ -41,7 +46,9 @@
             "CSS",
             "JS"
         ],
-        "img": "/image/pokemon/pokemon.png",
+        "img": [
+            "/image/pokemon/pokemon.png"
+        ],
         "imgLogo": "/image/pokemon/pokemonLogo.png"
     },
     {
@@ -56,7 +63,9 @@
             "CSS",
             "JS"
         ],
-        "img": "/image/cyberlab/cyberlab.png",
+        "img": [
+            "/image/cyberlab/cyberlab.png"
+        ],
         "imgLogo": "/image/cyberlab/cyberlabLogo.svg"
     }
 ]

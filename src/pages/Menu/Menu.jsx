@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect as useLayoutEffect, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import gsap from 'gsap'
 import './Menu.css'
@@ -12,7 +12,7 @@ const Menu = ({ menuAberto, setMenuAberto }) => {
     }
 
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (menuAberto) {
             gsap.to(menuPage.current, {
                 opacity: 1,
@@ -31,7 +31,7 @@ const Menu = ({ menuAberto, setMenuAberto }) => {
     }, [menuAberto])
 
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (!menuAberto) return
 
         const tl = gsap.timeline()

@@ -1,7 +1,11 @@
 import { useRef } from 'react';
+
 import '../Card/Card.css';
 import './CardItem.css'
 import '../../style/CardGlass.css'
+
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination } from 'swiper/modules'
 import * as bootstrap from 'bootstrap';
 
 const CardItem = ({ projeto }) => {
@@ -15,11 +19,11 @@ const CardItem = ({ projeto }) => {
 
     return (<>
 
-        <div className="card-project">
+        <div className="card-project h-100">
             <div className="cardGlass p-3 rounded-2">
 
                 <div className="container-visual">
-                    <img src={projeto.img} alt={projeto.nomeProjeto} className='img-project' />
+                    <img src={projeto.img[0]} alt={projeto.nomeProjeto} className='img-project' />
                     <div className='cardGlass img-projectLogo'>
                         <img src={projeto.imgLogo} />
                     </div>
@@ -67,7 +71,24 @@ const CardItem = ({ projeto }) => {
 
                     <div className="modal-body">
                         <div className='mb-4'>
-                            <img src={projeto.img} alt="" className='img-fluid object-fit-cover' />
+
+                            <Swiper
+                                modules={[Pagination, Navigation]}
+                                slidesPerView={1}
+                                pagination={{ clickable: true }}
+                                navigation
+                            >
+                                {projeto.img.map((img, idx) => (
+                                    <SwiperSlide key={idx}>
+                                        <img
+                                            src={img}
+                                            alt={projeto.nomeProjeto}
+                                            className="img-fluid object-fit-cover"
+                                        />
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+
                             <div className='w-100 mt-4'>
                                 <ul className='tags-project'>
                                     {Array.isArray(projeto.tags)
@@ -77,6 +98,9 @@ const CardItem = ({ projeto }) => {
                                         : <li>{projeto.tags}</li>
                                     }
                                 </ul>
+                            </div>
+                            <div className='mt-3'>
+                                <p>{projeto.ano}</p>
                             </div>
                         </div>
                         <p>{projeto.descricaoProjeto}</p>

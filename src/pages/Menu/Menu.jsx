@@ -64,7 +64,7 @@ const Menu = ({ menuAberto, setMenuAberto }) => {
                     Sobre
                 </NavLink>
 
-                <NavLink
+                <NavLink to={"/contato"}
                     className="menu-link contato-link d-flex align-items-center justify-content-between"
                     onClick={fecharMenu}
                 >

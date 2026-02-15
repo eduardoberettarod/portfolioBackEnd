@@ -6,6 +6,7 @@ import './style/global.css'
 import Index from './pages/Home/Index'
 import Project from './pages/Projects/Project'
 import Sobre from './pages/Sobre/Sobre'
+import Contato from './pages/Contato/Contato'
 
 // Components
 import Menu from './pages/Menu/Menu'
@@ -33,6 +34,8 @@ function App() {
         <Route path="/index" element={<Index />} />
         <Route path="/projetos" element={<Project />} />
         <Route path="/sobre" element={<Sobre />} />
+        <Route path="/contato" element={<Contato />} />
+
       </Routes>
     </>
   )

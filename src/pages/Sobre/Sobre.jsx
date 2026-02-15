@@ -1,14 +1,40 @@
-import React from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import './Sobre.css'
 import '../../style/CardGlass.css'
+import gsap from 'gsap'
+import { useLocation } from 'react-router-dom'
 
 const Sobre = () => {
+    const location = useLocation()
+    const containerRef = useRef(null)
+    const cardsRef = useRef(null)
+
+    useLayoutEffect(() => {
+
+        const ctx = gsap.context(() => {
+
+            gsap.fromTo(containerRef.current,
+                { x: -20, opacity: 0 },
+                { x: 0, opacity: 1, duration: 1 }
+            )
+
+            gsap.fromTo(cardsRef.current,
+                { y: 40, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1, delay: 0.5 }
+            )
+
+        })
+
+        return () => ctx.revert()
+
+    }, [location.pathname])
+
     return (
         <section id='sobre-page'>
 
             <div className="container px-4 px-lg-5 py-5">
 
-                <div className='mb-5 project-title'>
+                <div className='mb-5 project-title' ref={containerRef}>
                     <h1>Sobre</h1>
                     <div className='mt-3 project-subtitle opacity-75'>
                         <p className='mb-0'>
@@ -17,7 +43,7 @@ const Sobre = () => {
                     </div>
                 </div>
 
-                <div className='row g-4'>
+                <div className='row g-4' ref={cardsRef}>
 
                     <div className='col-lg-6'>
                         <div className='cardGlass p-4 h-100 rounded-3'>

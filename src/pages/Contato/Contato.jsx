@@ -1,14 +1,62 @@
-import React from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import './Contato.css'
 import '../../style/CardGlass.css'
+import gsap from 'gsap'
+import { useLocation } from 'react-router-dom'
+import emailjs from 'emailjs-com';
 
 const Contato = () => {
+
+    const location = useLocation()
+    const containerRef = useRef(null)
+    const cardsRef = useRef(null)
+
+    useLayoutEffect(() => {
+
+        const ctx = gsap.context(() => {
+
+            gsap.fromTo(containerRef.current,
+                { x: -20, opacity: 0 },
+                { x: 0, opacity: 1, duration: 1 }
+            )
+
+            gsap.fromTo(cardsRef.current,
+                { y: 40, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1, delay: 0.5 }
+            )
+
+        })
+
+        return () => ctx.revert()
+
+    }, [location.pathname])
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm(
+            'service_eduardo',     // Service ID
+            'template_o2k4ixp',    // Template ID
+            form.current,
+            'ipdcWkPMh0o-WwtED'    // Public Key
+        )
+            .then(() => {
+                alert("Mensagem enviada com sucesso!");
+                form.current.reset();
+            })
+            .catch((err) => {
+                alert("Erro ao enviar: " + err.text);
+            });
+    };
+
     return (
         <>
             <section id='contato-page'>
                 <div className="container px-4 px-lg-5 py-5">
 
-                    <div className='mb-5 project-title'>
+                    <div className='mb-5 project-title' ref={containerRef}>
                         <h1>Contato</h1>
                         <div className='mt-3 project-subtitle opacity-75'>
                             <p className='mb-0'>
@@ -19,11 +67,11 @@ const Contato = () => {
                         </div>
                     </div>
 
-                    <div className="row g-4">
+                    <div className="row g-4" ref={cardsRef}>
 
                         <div className="col-lg-5">
                             <div className="cardGlass p-4 h-100 rounded-3">
-                                <div className='row g-3'>
+                                <form className='row g-3' ref={form} onSubmit={sendEmail}>
 
                                     <div className='col-12'>
                                         <h2>Envie uma mensagem</h2>
@@ -50,7 +98,7 @@ const Contato = () => {
                                         </button>
                                     </div>
 
-                                </div>
+                                </form>
                             </div>
                         </div>
 

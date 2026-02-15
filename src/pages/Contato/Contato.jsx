@@ -37,10 +37,10 @@ const Contato = () => {
         e.preventDefault();
 
         emailjs.sendForm(
-            'service_eduardo',     // Service ID
-            'template_o2k4ixp',    // Template ID
+            'service_eduardo',
+            'template_o2k4ixp',
             form.current,
-            'ipdcWkPMh0o-WwtED'    // Public Key
+            'ipdcWkPMh0o-WwtED'
         )
             .then(() => {
                 alert("Mensagem enviada com sucesso!");
@@ -78,18 +78,46 @@ const Contato = () => {
                                     </div>
 
                                     <div className='col-12'>
-                                        <label className='form-label' htmlFor='nome'>Nome</label>
-                                        <input type="text" className='input' placeholder='Seu nome' id='nome' />
+                                        <label className='form-label' htmlFor='primeiro_nome'>Primeiro Nome</label>
+                                        <input
+                                            type="text"
+                                            name="primeiro_nome"
+                                            className="input"
+                                            placeholder="Seu primeiro nome"
+                                            id="primeiro_nome"
+                                        />
+                                    </div>
+
+                                    <div className='col-12'>
+                                        <label className='form-label' htmlFor='sobrenome'>Sobrenome</label>
+                                        <input
+                                            type="text"
+                                            name="sobrenome"
+                                            className="input"
+                                            placeholder="Seu sobrenome"
+                                            id="sobrenome"
+                                        />
                                     </div>
 
                                     <div className='col-12'>
                                         <label className='form-label' htmlFor='email'>Email</label>
-                                        <input type="email" className='input' placeholder='email@email.com' id='email' />
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            className="input"
+                                            placeholder="email@email.com"
+                                            id="email"
+                                        />
                                     </div>
 
                                     <div className='col-12'>
                                         <label className='form-label' htmlFor='mensagem'>Mensagem</label>
-                                        <textarea type="text" className='input textarea' placeholder='Sua mensagem' id='mensagem' />
+                                        <textarea
+                                            name="mensagem"
+                                            className="input textarea"
+                                            placeholder="Sua mensagem"
+                                            id="mensagem"
+                                        />
                                     </div>
 
                                     <div className='col-12'>

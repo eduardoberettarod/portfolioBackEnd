@@ -55,6 +55,13 @@ const Index = () => {
           </a>
         </div>
       </div>
+
+    <div className='container-desc'>
+      <p>
+        Os detalhes técnicos deste projeto, incluindo tecnologias utilizadas e estrutura de desenvolvimento, estão descritos no README.md disponível no GitHub.
+      </p>
+    </div>
+
     </section>
   )
 }

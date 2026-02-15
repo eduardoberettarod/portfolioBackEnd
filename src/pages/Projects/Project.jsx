@@ -54,7 +54,7 @@ const Project = () => {
         <div className="container px-4 px-lg-5 py-5">
           <div className='mb-4 project-title' ref={containerRef}>
             <h1>Projetos</h1>
-            <div className='mt-3 project-subtitle'>
+            <div className='mt-3 project-subtitle opacity-75'>
               <h3 className='mb-0'>Projetos selecionados</h3>
               <p>Cada um deles representa um avanço na minha evolução como desenvolvedor.</p>
             </div>

@@ -110,16 +110,16 @@ const CardItem = ({ projeto }) => {
                         <div className='row g-2 w-100'>
 
                             <div className='col-12 col-md-6'>
-                                <button className='d-flex gap-2 justify-content-center align-items-center btn-live'>
+                                <a href={projeto.link} target='_blank' className='d-flex gap-2 justify-content-center align-items-center btn-live'>
                                     Ver Projeto Online <i className="bi bi-arrow-up-right"></i>
-                                </button>
+                                </a>
                             </div>
 
                             <div className='col-12 col-md-6'>
-                                <button className='d-flex gap-2 justify-content-center align-items-center btn-github'>
+                                <a href={projeto.github} target='_blank' className='d-flex gap-2 justify-content-center align-items-center btn-github'>
                                     Ver no Github
                                     <i className='bi bi-github'></i>
-                                </button>
+                                </a>
                             </div>
 
                         </div>

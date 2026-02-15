@@ -13,7 +13,9 @@
         ],
         "img": [
             "/image/prontuario/prontuario-eletronico.png",
-            "/image/prontuario/prontuario-eletronico.png"
+            "/image/prontuario/prontuarioPacientes.png",
+            "/image/prontuario/prontuarioMedicamentos.png",
+            "/image/prontuario/prontuarioLogin.png"
         ],
         "imgLogo": "/image/prontuario/prontuario-eletronicoLogo.svg"
     },
@@ -30,7 +32,11 @@
             "JS"
         ],
         "img": [
-            "/image/portfolio/portfolio.png"
+            "/image/portfolio/portfolio.png",
+            "/image/portfolio/portfolioSobre.png",
+            "/image/portfolio/portfolioProjetos.png",
+            "/image/portfolio/portfolioServicos.png",
+            "/image/portfolio/portfolioContato.png"
         ],
         "imgLogo": "/image/portfolio/portfolioLogo.svg"
     },

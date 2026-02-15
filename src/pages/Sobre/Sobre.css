@@ -1,0 +1,26 @@
+#sobre-page {
+    position: relative;
+    color: #FAFAFA;
+    font-family: 'Neue Montreal';
+    letter-spacing: 0.5px;
+}
+
+#sobre-page .cardGlass {
+    min-height: 100%;
+}
+
+#sobre-page .cardGlass p {
+    font-size: 1.15rem;
+}
+
+.cardGlass strong {
+    color: #fafafa;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+@media (max-width: 767.98px) {
+    #sobre-page .cardGlass p {
+    font-size: 1rem;
+}
+}

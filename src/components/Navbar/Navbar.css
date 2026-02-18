@@ -25,6 +25,21 @@
     letter-spacing: 1px;
 }
 
+.logo-white,
+.logo-black {
+    transition: 0.3s filter ease;
+}
+
+.logo-white:hover {
+    transition: 0.3s filter ease;
+    filter: drop-shadow(0 0 4px #fafafa80);
+}
+
+.logo-black:hover {
+    transition: 0.3s filter ease;
+    filter: drop-shadow(0 0 4px #00000080);
+}
+
 @media (max-width: 767.98px) {
     .container-navbar-image img{
         width: 40px;

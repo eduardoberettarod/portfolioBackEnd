@@ -57,7 +57,9 @@ const Navbar = ({ menuAberto, setMenuAberto }) => {
   return (
     <div className="d-flex justify-content-between fixed-top align-items-center navbar-system">
       <NavLink to={'/index'} className="container-navbar-image">
-        {menuAberto ? <img src="/image/logo-black.svg" alt="Logo" ref={navbarLogoBlack} /> : <img src="/image/logo-white.svg" alt="Logo" ref={navbarLogo} /> }
+        {menuAberto ? 
+        <img src="/image/logo-black.svg" alt="Logo" ref={navbarLogoBlack} className='logo-black' /> : 
+        <img src="/image/logo-white.svg" alt="Logo" ref={navbarLogo} className='logo-white'/> }
         
       </NavLink>
 

@@ -9,6 +9,7 @@ import Background from '../../components/Background/Background'
 const Index = () => {
   const containerHome = useRef(null)
   const containerButton = useRef(null)
+  const containerDesc = useRef(null)
 
   const location = useLocation()
 
@@ -31,6 +32,18 @@ const Index = () => {
       { x: 20, opacity: 0 },
       {
         x: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: 'power2.out'
+      }
+    )
+
+    gsap.fromTo(
+      containerDesc.current,
+      { y: 20, opacity: 0 },
+      {
+        y: 0,
+        delay: 0.5,
         opacity: 1,
         duration: 1,
         ease: 'power2.out'
@@ -56,7 +69,7 @@ const Index = () => {
         </div>
       </div>
 
-    <div className='container-desc'>
+    <div className='container-desc' ref={containerDesc}>
       <p>
         Os detalhes técnicos deste projeto, incluindo tecnologias utilizadas e estrutura de desenvolvimento, estão descritos no README.md disponível no GitHub.
       </p>

@@ -2,7 +2,7 @@
     position: relative;
     color: #FAFAFA;
     font-family: 'Neue Montreal';
-    letter-spacing: 0.5px;
+    letter-spacing: 1.1px;
 }
 
 .input {
@@ -15,7 +15,7 @@
     border-radius: 8px;
     font-size: 0.95rem;
     font-family: 'Neue Montreal';
-    letter-spacing: 0.5px;
+    letter-spacing: 1.1px;
     outline: none;
     transition: all 0.2s ease;
 }
@@ -48,7 +48,7 @@
     color: #191919;
     font-size: 0.95rem;
     font-weight: 600;
-    letter-spacing: 0.4px;
+    letter-spacing: 1.1px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,16 +78,12 @@
     display: flex;
     align-items: center;
     gap: 10px;
-
     padding: 10px 12px;
     border-radius: 8px;
-
     text-decoration: none;
     color: #fafafa;
-
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(255,255,255,0.08);
-
     transition: all 0.25s ease;
 }
 
@@ -98,7 +94,7 @@
 
 .social-item span {
     font-size: 1rem;
-    letter-spacing: 0.3px;
+    letter-spacing: 1.1px;
 }
 
 /* hover */

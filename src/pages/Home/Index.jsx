@@ -7,22 +7,35 @@ import './Index.css'
 import Background from '../../components/Background/Background'
 
 const Index = () => {
-  const containerHome = useRef(null)
+  const containerLed = useRef(null)
+  const containerEdu = useRef(null)
   const containerButton = useRef(null)
   const containerDesc = useRef(null)
 
   const location = useLocation()
 
   useLayoutEffect(() => {
-    // 🔹 sempre que entrar no /index, isso roda
+
 
     gsap.fromTo(
-      containerHome.current,
-      { y: 30, opacity: 0 },   // estado inicial
+      containerLed.current,
+      { y: 30, opacity: 0 },
       {
         y: 0,
         opacity: 1,
         duration: 1,
+        ease: 'power2.out'
+      }
+    )
+
+    gsap.fromTo(
+      containerEdu.current,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        delay: 1,
+        opacity: 1,
+        duration: 1.3,
         ease: 'power2.out'
       }
     )
@@ -32,8 +45,9 @@ const Index = () => {
       { x: 20, opacity: 0 },
       {
         x: 0,
+        delay: 1,
         opacity: 1,
-        duration: 1.2,
+        duration: 1.3,
         ease: 'power2.out'
       }
     )
@@ -43,22 +57,41 @@ const Index = () => {
       { y: 20, opacity: 0 },
       {
         y: 0,
-        delay: 0.5,
+        delay: 1,
         opacity: 1,
-        duration: 1,
+        duration: 1.3,
         ease: 'power2.out'
       }
     )
 
-  }, [location.pathname]) // 🔥 3. isso é a chave
+  }, [location.pathname])
 
   return (
     <section id="index-page">
       <Background />
 
-      <div className="container-home" ref={containerHome}>
-        <h1>Eduardo Beretta</h1>
-        <p>Desenvolvedor Full Stack</p>
+      <div className="container-home">
+        <div className='d-flex text-led' ref={containerLed}>
+          <div className='word'>
+            <span>H</span>
+            <span id='reverse'>E</span>
+            <span>L</span>
+            <span>L</span>
+            <span>O</span>
+          </div>
+
+          <div className='word'>
+            <span>W</span>
+            <span>O</span>
+            <span>R</span>
+            <span>L</span>
+            <span>D</span>
+          </div>
+        </div>
+        <h3 className='text-edu d-flex gap-3' ref={containerEdu}>
+            <span>EDUARDO</span>
+            <span>BERETTA</span>
+        </h3>
       </div>
 
       <div className="container-buttons" ref={containerButton}>
@@ -69,11 +102,11 @@ const Index = () => {
         </div>
       </div>
 
-    <div className='container-desc' ref={containerDesc}>
-      <p>
-        Os detalhes técnicos deste projeto, incluindo tecnologias utilizadas e estrutura de desenvolvimento, estão descritos no README.md disponível no GitHub.
-      </p>
-    </div>
+      <div className='container-desc' ref={containerDesc}>
+        <p>
+          Os detalhes técnicos deste projeto, incluindo tecnologias utilizadas e estrutura de desenvolvimento, estão descritos no README.md disponível no GitHub.
+        </p>
+      </div>
 
     </section>
   )

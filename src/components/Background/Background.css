@@ -7,11 +7,24 @@
     pointer-events: none;
 }
 
-.mask{
+.mask {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background: radial-gradient(circle,
+            transparent 50%,
+            rgba(0, 0, 0, 0.4) 100%);
+    pointer-events: none;
+}
+
+.mask::after {
+    content: '';
     position: absolute;
     width: 100%;
     height: 100vh;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.30);
     pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.3);
+
 }

@@ -27,7 +27,7 @@ const Navbar = ({ menuAberto, setMenuAberto }) => {
       ease: 'power2.out'
     })
 
-  })
+  }, [])
 
   useLayoutEffect(() => {
     if (!buttonRef.current) return
@@ -53,14 +53,14 @@ const Navbar = ({ menuAberto, setMenuAberto }) => {
       }
     })
   }, [menuAberto])
+  console.log(menuAberto)
 
   return (
     <div className="d-flex justify-content-between fixed-top align-items-center navbar-system">
       <NavLink to={'/index'} className="container-navbar-image">
-        {menuAberto ? 
-        <img src="/image/logo-black.svg" alt="Logo" ref={navbarLogoBlack} className='logo-black' /> : 
-        <img src="/image/logo-white.svg" alt="Logo" ref={navbarLogo} className='logo-white'/> }
-        
+        {menuAberto ?
+          <img src="/image/logo-black.svg" alt="Logo" ref={navbarLogoBlack} className='logo-black' /> :
+          <img src="/image/logo-white.svg" alt="Logo" ref={navbarLogo} className='logo-white' />}
       </NavLink>
 
       <div className="container-navbar-button">

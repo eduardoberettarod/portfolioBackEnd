@@ -6,7 +6,7 @@ import './Index.css'
 // components
 import Background from '../../components/Background/Background'
 
-const Index = () => {
+const Index = ({ loading }) => {
   const containerLed = useRef(null)
   const containerEdu = useRef(null)
   const containerButton = useRef(null)
@@ -16,55 +16,39 @@ const Index = () => {
 
   useLayoutEffect(() => {
 
+  if (loading) return
 
-    gsap.fromTo(
-      containerLed.current,
-      { y: 30, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: 'power2.out'
-      }
-    )
+  const tl = gsap.timeline()
 
-    gsap.fromTo(
-      containerEdu.current,
-      { y: 30, opacity: 0 },
-      {
-        y: 0,
-        delay: 1,
-        opacity: 1,
-        duration: 1.3,
-        ease: 'power2.out'
-      }
-    )
+  tl.fromTo(
+    containerLed.current,
+    { y: 30, opacity: 0 },
+    { y: 0, opacity: 1, duration: 1, ease: 'power2.out' }
+  )
+  .fromTo(
+    containerEdu.current,
+    { y: 30, opacity: 0 },
+    { y: 0, opacity: 1, duration: 1.3, ease: 'power2.out' },
+    "-=0.3"
+  )
+  .fromTo(
+    containerButton.current,
+    { x: 20, opacity: 0 },
+    { x: 0, opacity: 1, duration: 1.3, ease: 'power2.out' },
+    "-=1"
+  )
+  .fromTo(
+    containerDesc.current,
+    { y: 20, opacity: 0 },
+    { y: 0, opacity: 1, duration: 1.3, ease: 'power2.out' },
+    "-=1"
+  )
 
-    gsap.fromTo(
-      containerButton.current,
-      { x: 20, opacity: 0 },
-      {
-        x: 0,
-        delay: 1,
-        opacity: 1,
-        duration: 1.3,
-        ease: 'power2.out'
-      }
-    )
+  return () => {
+    tl.kill()
+  }
 
-    gsap.fromTo(
-      containerDesc.current,
-      { y: 20, opacity: 0 },
-      {
-        y: 0,
-        delay: 1,
-        opacity: 1,
-        duration: 1.3,
-        ease: 'power2.out'
-      }
-    )
-
-  }, [location.pathname])
+}, [location.pathname, loading])  
 
   return (
     <section id="index-page">

@@ -15,9 +15,15 @@ const Loader = ({ onComplete }) => {
             }
         })
 
-        // Estado inicial garantido
-        gsap.set(textRef.current, { opacity: 0 })
-        gsap.set(logoRef.current, { opacity: 0, x: 0 })
+
+        gsap.set(textRef.current,
+            { opacity: 0 })
+
+        gsap.set(logoRef.current,
+            {
+                opacity: 0,
+                x: 0
+            })
 
         // 1️⃣ Logo aparece no centro
         tl.to(logoRef.current, {
@@ -27,29 +33,28 @@ const Loader = ({ onComplete }) => {
         })
 
         // 2️⃣ Pequena pausa
-        tl.to({}, { duration: 0.8 })
+        tl.to({}, { duration: 0.6 })
+
+                tl.to(
+            logoRef.current,
+            {
+                opacity: 0,
+                duration: 1.2,
+                ease: "power3.out"
+            },
+            "<"
+        )
 
         // 3️⃣ Nome entra da direita
         tl.fromTo(
             textRef.current,
             { x: 100 },
             {
-                x: -20,
+                x: -67.5,
                 opacity: 1,
                 duration: 1.2,
                 ease: "power3.out"
             }
-        )
-
-        // 4️⃣ Logo é empurrado ao mesmo tempo
-        tl.to(
-            logoRef.current,
-            {
-                x: -100,
-                duration: 1.2,
-                ease: "power3.out"
-            },
-            "<"
         )
 
         // 5️⃣ Pequena pausa

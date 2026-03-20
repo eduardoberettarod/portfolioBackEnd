@@ -3,7 +3,7 @@
         "id": 1,
         "nomeProjeto": "Sistema de Prontuário Eletrônico",
         "descricaoProjeto": "Um sistema completo de prontuário eletrônico desenvolvido para facilitar o gerenciamento de informações de alunos por professores. O sistema oferece recursos avançados para registro, organização e acesso rápido aos dados dos estudantes.",
-        "link": "https://pi-prontuario-eletronico.vercel.app/",
+        "link": "https://prontuario-eletronico-senac.vercel.app/",
         "ano": "2025 — 2026",
         "github": "https://github.com/eduardoberettarod/PI-prontuario-eletronico",
         "tags": [

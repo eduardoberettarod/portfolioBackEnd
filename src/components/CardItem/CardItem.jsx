@@ -5,7 +5,7 @@ import './CardItem.css'
 import '../../style/CardGlass.css'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination } from 'swiper/modules'
+import { Navigation, Pagination, Scrollbar } from 'swiper/modules'
 import * as bootstrap from 'bootstrap';
 
 const CardItem = ({ projeto }) => {
@@ -16,6 +16,10 @@ const CardItem = ({ projeto }) => {
         const modal = new bootstrap.Modal(modalRef.current);
         modal.show();
     };
+
+    const temLink = projeto.link;
+    const temGithub = projeto.github;
+    const coluna = (temLink && temGithub) ? "col-md-6" : "col-12";
 
     return (<>
 
@@ -75,6 +79,7 @@ const CardItem = ({ projeto }) => {
                             <Swiper
                                 modules={[Pagination, Navigation]}
                                 slidesPerView={1}
+                                loop={true}
                                 pagination={{ clickable: true }}
                                 navigation
                             >
@@ -83,7 +88,7 @@ const CardItem = ({ projeto }) => {
                                         <img
                                             src={img}
                                             alt={projeto.nomeProjeto}
-                                            className="img-fluid object-fit-cover"
+                                            className="img-fluid object-fit-cover img-card-project"
                                         />
                                     </SwiperSlide>
                                 ))}
@@ -109,18 +114,39 @@ const CardItem = ({ projeto }) => {
                     <div className="modal-footer">
                         <div className='row g-2 w-100'>
 
-                            <div className='col-12 col-md-6'>
-                                <a href={projeto.link} target='_blank' className='d-flex gap-2 justify-content-center align-items-center btn-live'>
-                                    Ver Projeto Online <i className="bi bi-arrow-up-right"></i>
-                                </a>
-                            </div>
+                            {temLink && (
+                                <div className={`col-12 ${coluna}`}>
+                                    <a
+                                        href={projeto.link}
+                                        target='_blank'
+                                        rel="noopener noreferrer"
+                                        className='d-flex gap-2 justify-content-center align-items-center btn-live'
+                                    >
+                                        Ver Projeto Online <i className="bi bi-arrow-up-right"></i>
+                                    </a>
+                                </div>
+                            )}
 
-                            <div className='col-12 col-md-6'>
-                                <a href={projeto.github} target='_blank' className='d-flex gap-2 justify-content-center align-items-center btn-github'>
-                                    Ver no Github
-                                    <i className='bi bi-github'></i>
-                                </a>
-                            </div>
+                            {temGithub && (
+                                <div className={`col-12 ${coluna}`}>
+                                    <a
+                                        href={projeto.github}
+                                        target='_blank'
+                                        rel="noopener noreferrer"
+                                        className='d-flex gap-2 justify-content-center align-items-center btn-github'
+                                    >
+                                        Ver no Github <i className='bi bi-github'></i>
+                                    </a>
+                                </div>
+                            )}
+
+                            {!temLink && !temGithub && (
+                                <div className="col-12 text-center">
+                                    <p className="opacity-75 m-0">
+                                        Projeto privado
+                                    </p>
+                                </div>
+                            )}
 
                         </div>
                     </div>

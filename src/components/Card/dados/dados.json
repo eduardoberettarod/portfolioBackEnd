@@ -2,8 +2,8 @@
     {
         "id": 1,
         "nomeProjeto": "Sistema de Prontuário Eletrônico",
-        "descricaoProjeto": "Um sistema completo de prontuário eletrônico desenvolvido para facilitar o gerenciamento de informações de alunos por professores. O sistema oferece recursos avançados para registro, organização e acesso rápido aos dados dos estudantes.",
-        "link": "https://prontuario-eletronico-senac.vercel.app/",
+        "descricaoProjeto": "Sistema desenvolvido para professores de saúde do SENAC Americana com objetivo de transformar processos manuais em uma plataforma web de fácil acesso. Centraliza o gerenciamento de prontuários eletrônicos de pacientes, permitindo que os educadores organizem e acompanhem informações médicas de forma estruturada. Integra dados completos sobre pacientes, medicamentos, cuidados clínicos, relatórios e setores de atendimento em um único lugar. Oferece autenticação segura com controle de permissões, garantindo que cada usuário acesse apenas o que é relevante para sua função. Reduz significativamente o tempo gasto em tarefas administrativas manuais, permitindo que professores e alunos focalizem no aprendizado prático e teórico. Funciona como ferramenta educacional para ensinar gerenciamento de dados em ambiente hospitalar simulado.",
+        "link": null,
         "ano": "2025 — 2026",
         "github": "https://github.com/eduardoberettarod/PI-prontuario-eletronico",
         "tags": [
@@ -43,8 +43,8 @@
     {
         "id": 3,
         "nomeProjeto": "Pokédex Simples",
-        "descricaoProjeto": "Uma landing page de portfolio pessoal criada para apresentar projetos e habilidades. Esta versão inicial demonstra conhecimentos em desenvolvimento front-end com foco em design responsivo e experiência do usuário.",
-        "link": "https://aula-react-pokemon.vercel.app/",
+        "descricaoProjeto": "Pokédex que centraliza informações de Pokémons de forma organizada e acessível. A aplicação exibe detalhes como nome, número de identificação, tipo e classificação de energia de cada personagem através de cards visuais bem estruturados. Resolve o problema de consultar e comparar características de Pokémons em um único lugar, sem necessidade de navegação complexa. Oferece uma interface intuitiva que permite explorar diferentes personagens e seus atributos rapidamente. O projeto é ideal para fãs que desejam uma referência prática e visual dos personagens da franquia.",
+        "link": "https://aula-react-pokemon.vercel.app",
         "ano": "2025",
         "github": "https://github.com/eduardoberettarod/aula-react-pokemon",
         "tags": [
@@ -56,22 +56,5 @@
             "/image/pokemon/pokemon.png"
         ],
         "imgLogo": "/image/pokemon/pokemonLogo.png"
-    },
-    {
-        "id": 4,
-        "nomeProjeto": "CyberLab",
-        "descricaoProjeto": "Uma landing page de portfolio pessoal criada para apresentar projetos e habilidades. Esta versão inicial demonstra conhecimentos em desenvolvimento front-end com foco em design responsivo e experiência do usuário.",
-        "link": "https://aula-react-pokemon.vercel.app/",
-        "ano": "2025",
-        "github": "https://github.com/eduardoberettarod/aula-react-pokemon",
-        "tags": [
-            "HTML",
-            "CSS",
-            "JS"
-        ],
-        "img": [
-            "/image/cyberlab/cyberlab.png"
-        ],
-        "imgLogo": "/image/cyberlab/cyberlabLogo.svg"
     }
 ]
